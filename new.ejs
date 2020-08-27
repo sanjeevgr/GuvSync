@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+<div>
+	<form class ="ui form" action="/blogs" method="POST">
+			<div class ="field">
+				<input type="text" name="blog[title]" placeholder="Blog Title">
+			</div>
+			<div class ="field">
+				<input type="text" name="blog[category]" placeholder="Category">
+			</div>
+			<div class ="field">
+				<input type="text" name="blog[studentID]" placeholder="ID Number (MUST BE A NUMBER)">
+			</div>
+			<div class ="field">
+				<input type="text" name="blog[name]" placeholder="First and Last Name">
+			</div>
+			<div class ="field">
+				<textarea name="blog[content]" placeholder="Enter Blog Content"></textarea>
+			</div>
+			<div class ="field">
+				<button class="ui yellow button" type="submit">Post</button>
+			</div>
+	</form>
+</div>
+<%- include("partials/footer.ejs") %>

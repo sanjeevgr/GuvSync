@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+
+	<div class="ui center aligned container">
+		<h3><%= blog.title %></h3>	
+		<h4><%= blog.category %></h4>	
+		<h5><%- blog.content %></h5>
+		<a class="ui blue inverted button" href="/blogs/<%= blog._id %>/edit">Edit</a>
+		<form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+			<button class="ui red inverted button">Delete</button>
+		</form>
+		<h6><%= blog.name %></h6>
+		<img src="<%= blog.avi %>">
+		<p><strong><%= blog.timeStamp.toDateString() %></strong></p>	
+	</div>
+
+<%- include("partials/footer.ejs") %>

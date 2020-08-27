@@ -1,0 +1,40 @@
+<%- include("partials/header.ejs") %>
+
+<div class="ui fluid container">
+	<div class="ui center aligned container">
+		<h1>Blogs</h1>
+		<button>
+			<a href="/blogs/new">Create a Post</a>
+		</button>
+	</div>
+	<div class="container">
+		<div class="ui four column doubling stackable grid container">
+			<% blogs.forEach(function(blog){ %>
+				<div class="column" id="post">
+					<div class="ui segment">
+						<div class="ui center aligned basic segment">
+							<div class="column">
+								<h3 class="ui header">
+									<div class="content">
+										<%= blog.title %>
+										<div class="sub header">Topic: <%= blog.category %></div>
+									</div>
+								</h3>
+							</div>
+							<div class="column">
+								<p><%- blog.content.substring(0,100) + "..." %></p>
+								<a href="/blogs/<%= blog._id %>">Read More...</a>
+							</div>
+						</div>
+						<div class="ui horizontal divider">
+						</div>
+					</div>
+					<img class="ui avatar image" src="<%= blog.avi %>">
+					<span><%= blog.name %></span>
+				</div>
+			<% }) %>
+		</div>
+	</div>
+</div>
+
+<%- include("partials/footer.ejs") %>
